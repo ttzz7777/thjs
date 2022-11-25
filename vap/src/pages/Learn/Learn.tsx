@@ -36,6 +36,9 @@ const Learn: React.FC<any> = () => {
   // })
   // console.log(obj2)        forEach没有返回值
 
+  console.log(Object instanceof Function)
+  console.log(Function instanceof Object)
+
   return <div>123</div>
 }
 
