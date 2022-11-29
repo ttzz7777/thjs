@@ -1,13 +1,24 @@
-import React from 'react'
-import { Input } from 'antd'
+import React, { useEffect } from 'react'
+import { Input, Button } from 'antd'
 import styles from './index.module.less'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { COUNT, COUNT_GET } from '../../store'
+import axios from 'axios'
 
 const Login: React.FC<any> = () => {
   // useRecoilState(读，写)
   // useRecoilValue(读)
   const [count, setCount] = useRecoilState(COUNT)
+
+  const controller = new AbortController()
+
+  const click = () => {
+    console.log('按钮被点击了')
+  }
+
+  const abort = () => {
+    controller.abort()
+  }
 
   const onChange = (e: any) => {
     setCount(e.target.value)
@@ -31,6 +42,13 @@ const Login: React.FC<any> = () => {
       Echo:{count}
       <br />
       <CountGet />
+      <br />
+      <Button type="primary" onClick={click}>
+        测试接口
+      </Button>
+      <Button type="primary" onClick={abort}>
+        终止接口
+      </Button>
     </div>
   )
 }
