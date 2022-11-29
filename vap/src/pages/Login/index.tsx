@@ -3,7 +3,6 @@ import { Input, Button } from 'antd'
 import styles from './index.module.less'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { COUNT, COUNT_GET } from '../../store'
-import axios from 'axios'
 
 const Login: React.FC<any> = () => {
   // useRecoilState(读，写)
