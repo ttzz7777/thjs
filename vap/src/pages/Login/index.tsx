@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import { Input, Button } from 'antd'
 import styles from './index.module.less'
 import { useRecoilState, useRecoilValue } from 'recoil'
@@ -13,6 +14,13 @@ const Login: React.FC<any> = () => {
 
   const click = () => {
     console.log('按钮被点击了')
+    axios({
+      method: 'get',
+      url: 'http://localhost:3000/api/nihao',
+      signal: controller.signal,
+    }).then((res) => {
+      console.log(res.data)
+    })
   }
 
   const abort = () => {
