@@ -1,16 +1,19 @@
 import React from 'react'
+import { COUNT } from '../../store'
+import { useRecoilValue } from 'recoil'
 
 const Learn: React.FC<any> = () => {
-  let arr1 = [3, 1, 2, 5, 21]
-  let arr2 = [7, 8, 9]
-  let arr3 = ['a', 'b', 'c']
-  let str = 'absdbasd'
-  let obj1 = { a: 'html', b: 'css', c: 'javascript' }
-  let obj2 = [
-    { a: 'a', b: 'b' },
-    { c: 'c', d: 'd' },
-    { e: 'e', f: 'f' },
-  ]
+  const count = useRecoilValue(COUNT)
+  // let arr1 = [3, 1, 2, 5, 21]
+  // let arr2 = [7, 8, 9]
+  // let arr3 = ['a', 'b', 'c']
+  // let str = 'absdbasd'
+  // let obj1 = { a: 'html', b: 'css', c: 'javascript' }
+  // let obj2 = [
+  //   { a: 'a', b: 'b' },
+  //   { c: 'c', d: 'd' },
+  //   { e: 'e', f: 'f' },
+  // ]
 
   // console.log(str.replace('a', 'b'))
 
@@ -36,10 +39,7 @@ const Learn: React.FC<any> = () => {
   // })
   // console.log(obj2)        forEach没有返回值
 
-  console.log(Object instanceof Function)
-  console.log(Function instanceof Object)
-
-  return <div>123</div>
+  return <div>{count}</div>
 }
 
 export default Learn

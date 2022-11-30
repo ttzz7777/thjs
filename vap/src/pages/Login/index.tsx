@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Input, Button } from 'antd'
 import styles from './index.module.less'
 import { useRecoilState, useRecoilValue } from 'recoil'
