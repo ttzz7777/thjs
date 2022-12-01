@@ -15,9 +15,10 @@ const Login: React.FC<any> = () => {
   const click = () => {
     console.log('按钮被点击了')
     axios({
-      method: 'get',
-      url: 'http://localhost:3000/api/nihao',
+      method: 'post',
+      url: ' https://m.xiaomiyoupin.com/mtop/market/search/placeHolder',
       signal: controller.signal,
+      data: {},
     }).then((res) => {
       console.log(res.data)
     })

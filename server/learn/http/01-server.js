@@ -18,6 +18,8 @@ server.on('request', (req, res) => {
 
     res.writeHead(moduleRenderStatus.renderStatus(pathname), {
         'Content-Type': 'text/html;charset=utf-8',
+        // cors头
+        'access-control-allow-origin': '*',
     })
     if (pathname === '/favicon.ico') {
         // todo 读取本地图标
