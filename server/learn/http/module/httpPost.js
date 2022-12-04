@@ -15,9 +15,17 @@ const httpPost = (cb) => {
             'Content-Type': 'application/json',
         },
     }
-    var req = https.request(options, () => {})
+    var req = https.request(options, (res) => {
+        res.on('data', (chunk) => {
+            data += chunk
+        })
+        res.on('end', () => {
+            console.log(data)
+            cb(data)
+        })
+    })
 
-    req.write([{}, { baseParam: { ygClient: 1 } }])
+    req.write(JSON.stringify([{}, { baseParam: { ygClient: 1 } }]))
     req.end()
 }
 

@@ -16,9 +16,8 @@ const Login: React.FC<any> = () => {
     console.log('按钮被点击了')
     axios({
       method: 'post',
-      url: ' https://m.xiaomiyoupin.com/mtop/market/search/placeHolder',
+      url: 'http://localhost:3000/api/xiaomi',
       signal: controller.signal,
-      data: {},
     }).then((res) => {
       console.log(res.data)
     })
