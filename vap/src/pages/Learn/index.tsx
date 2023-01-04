@@ -1,44 +1,33 @@
 import React from 'react'
 import { COUNT } from '../../store'
 import { useRecoilValue } from 'recoil'
-import { mainModule } from 'process'
 
 const Learn: React.FC<any> = () => {
   const count = useRecoilValue(COUNT)
-  // let arr1 = [3, 1, 2, 5, 21]
-  // let arr2 = [7, 8, 9]
-  // let arr3 = ['a', 'b', 'c']
-  // let str = 'absdbasd'
-  // let obj1 = { a: 'html', b: 'css', c: 'javascript' }
-  // let obj2 = [
-  //   { a: 'a', b: 'b' },
-  //   { c: 'c', d: 'd' },
-  //   { e: 'e', f: 'f' },
-  // ]
 
-  // console.log(str.replace('a', 'b'))
-
-  // let newArr = arr1.reduce((a, b) => a + b)  reduce累加器 32
-  // console.log(arr1.includes(3)) true
-  // console.log(Object.entries(obj))
-  // for (let i in obj2) {
-  //   console.log(obj2[i])
-  // }
-  // for (let i in obj1) {
-  //   console.log(i)
-  // }
-  // for (let i of arr3) {
-  //   console.log(i)
-  // } for of 不能遍历普通对象
-  // let newarr = obj2.map((item, index, arr) => {
-  //   item.b = 'abc'
-  //   return item
-  // })
-  // console.log(newarr)      map有返回值
-  // obj2.forEach((item, index, arr) => {
-  //   item.a = 'abc'
-  // })
-  // console.log(obj2)        forEach没有返回值
+  const deepClone = (obj: any) => {
+    // 定义一个变量 并判断是数组还是对象
+    var objClone = Array.isArray(obj) ? [] : {}
+    if (obj && typeof obj === 'object' && obj != null) {
+      // 判断obj存在并且是对象类型的时候 因为null也是object类型，所以要单独做判断
+      for (var key in obj) {
+        // 循环对象类型的obj
+        if (obj.hasOwnProperty(key)) {
+          // 判断obj中是否存在key属性
+          if (obj[key] && typeof obj[key] === 'object') {
+            // 判断如果obj[key]存在并且obj[key]是对象类型的时候应该深拷贝，即在堆内存中开辟新的内存
+            // @ts-ignore
+            objClone[key] = deepClone(obj[key])
+          } else {
+            // 否则就是浅拷贝
+            // @ts-ignore
+            objClone[key] = obj[key]
+          }
+        }
+      }
+    }
+    return objClone
+  }
 
   return <div>{count}</div>
 }
