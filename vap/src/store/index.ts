@@ -2,7 +2,7 @@ import { atom, selector } from 'recoil'
 
 export const COUNT = atom({
   key: 'Count',
-  default: '123',
+  default: '1234',
 })
 
 export const COUNT_GET = selector({
