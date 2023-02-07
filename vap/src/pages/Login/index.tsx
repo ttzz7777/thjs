@@ -16,7 +16,8 @@ const Login: React.FC<any> = () => {
     console.log('按钮被点击了')
     axios({
       method: 'post',
-      url: 'http://localhost:3000/api/xiaomi',
+      // url: 'http://localhost:3000/api/xiaomi',
+      url: 'http://localhost:3000/add',
       signal: controller.signal,
     }).then((res) => {
       console.log(res.data)
