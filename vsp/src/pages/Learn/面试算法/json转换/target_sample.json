@@ -1,0 +1,47 @@
+[
+    {
+        "name":"flaw_type_1300",
+        "nickName":"大型缺陷"
+    },
+    {
+        "name":"flaw_type_1301",
+        "nickName":"大型缺陷_可见"
+    },
+    {
+        "name":"flaw_type_1302",
+        "nickName":"大型缺陷_不可见"
+    },
+    {
+        "name":"flaw_type_1200",
+        "nickName":"白点"
+    },
+    {
+        "name":"flaw_type_1201",
+        "nickName":"白点_微小白点"
+    },
+    {
+        "name":"flaw_type_1202",
+        "nickName":"白点_小白点"
+    },
+    {
+        "name":"flaw_type_1203",
+        "nickName":"白点_中白点"
+    },
+    {
+        "name":"flaw_type_1204",
+        "nickName":"白点_大白点"
+    },
+    {
+        "name":"flaw_type_1205",
+        "nickName":"白点_超大白点"
+    },
+    {
+        "name":"flaw_type_1700",
+        "nickName":"划痕/划伤"
+    },
+    {
+        "name":"flaw_type_1701",
+        "nickName":"划痕/划伤_条纹"
+    }
+]
+    

@@ -1,0 +1,14 @@
+﻿请用您熟悉的语言完成如下功能，并提供源代码
+
+这是一个将参数配置json文件，转换成列表格式json的需求。
+读取文件params.json
+提取其中的信息，转换成target.json，格式范例见target_sample.json
+规则如下：
+    没有id的对象不需要转换
+    id>=8000的对象不需要转换
+    在id转换成name的时候，在id前加上“flaw_type_”拼接成name
+    nickName是show属性的转换
+    子对象的nickName 是父对象的属性名为Attributes的兄弟对象的show属性加上“_”下划线，再加自身的show属性拼接而成。
+    在实际应用中，params.json 是因每个项目不同，子对象嵌套层数可能不同(可能嵌套两层、三层、四层......)，但是格式不会发生变化，请在代码中考虑到通用化的情况。
+
+限时三个小时，题目做完后请将此文件夹的名称由leaper_data_trans改为您的姓名+联系方式，并把简历放到文件夹中，然后发回邮箱wu.baoling@hzleaper.com
