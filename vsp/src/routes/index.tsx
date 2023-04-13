@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react'
+ import React, { lazy, Suspense } from 'react'
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
 
 const VspLogin = lazy(() => import('../pages/Login'))

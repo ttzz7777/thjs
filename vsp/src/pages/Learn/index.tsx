@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { COUNT } from '../../store'
 import { useRecoilValue } from 'recoil'
+import { setTimeout } from 'timers/promises'
 
 const Learn: React.FC<any> = () => {
   const count = useRecoilValue(COUNT)
@@ -43,6 +44,16 @@ const Learn: React.FC<any> = () => {
   //     if (proto == prototype) return true
   //     proto = Object.getPrototypeOf(proto)
   //   }
+  // }
+
+  // 实现new方法
+  // const myNew = (fn: any, ...args: any) => {
+  //   // 基于原型链 创建一个新对象
+  //   let newObj = Object.create(fn.prototype)
+  //   // 添加属性到新对象上 并获取obj函数的结果
+  //   let res = fn.apply(newObj, args)
+  //   // 如果执行结构有返回值并是一个对象，返回执行结果，否则，返回新创建的对象
+  //   return typeof res === 'object' ? res : newObj
   // }
 
   //手写深拷贝
@@ -108,6 +119,20 @@ const Learn: React.FC<any> = () => {
   // }
   // console.log(MoreThanHalfNum_Solution(arr))
 
+  // 用reduce统计字符串中字母出现的次数
+  // (pre:初始值 item:当前的项 index:当前索引 arr:原数组)(初始值)
+  // 若没有第二个参数(初始值)则刚开始从index:1开始处理，忽略了index=0
+  // 函数执行里要切记要return
+  // const str = 'jshdjsihh'
+  // const tongJi = (str: String) => {
+  //   const b = str.split('').reduce((pre: any, item: any) => {
+  //     pre[item] ? pre[item]++ : (pre[item] = 1)
+  //     return pre
+  //   }, {})
+  //   return b
+  // }
+  // console.log(tongJi(str))
+
   // 用javascript实现斐波那契数列函数。f(1)=1,f(2)=2 应用：跳台阶
   // function Fibonacci(n: any) {
   //   let memo = []
@@ -170,6 +195,31 @@ const Learn: React.FC<any> = () => {
   // console.log(clear(str))
 
   // 驼峰命名
+  // 大小写 转 _
+  // let a = 'tianJinLiGongDaXue'
+  // function change(str: string) {
+  //   let tuo = ''
+  //   let arr = str.split('')
+  //   let newArr = arr.map((item: any) => {
+  //     return item.toUpperCase() === item ? '_' + item.toLowerCase() : item
+  //   })
+  //   tuo = newArr.join('')
+  //   return tuo
+  // }
+  // console.log(change(a))
+
+  // _ 转 大小写
+  // let a = 'tian_jin_li_gong_da_xue'
+  // const change = (str: string) => {
+  //   let feng = ''
+  //   let arr = str.split('_')
+  //   let newArr = arr.map((item, index) => {
+  //     return index === 0 ? item : item[0].toUpperCase() + item.slice(1)
+  //   })
+  //   feng = newArr.join('')
+  //   return feng
+  // }
+  // console.log(change(a))
 
   //数组拍平
   // 1
@@ -251,6 +301,42 @@ const Learn: React.FC<any> = () => {
   // console.log(noRepeat(arr))
 
   //对象数组去重
+
+  // Promise
+  // const arr = [1]
+  // let [a, b] = arr
+  // console.log(a)
+  // console.log(b)
+
+  // Effect拿到state的最新
+  // const [count, setCount] = useState(0)
+  // useEffect(() => {
+  //   document.body.addEventListener('xxxx', () => {
+  //     console.log('count', count)
+  //   })
+  // }, [count])
+  // return (
+  //   <>
+  //     {count}
+  //     <button
+  //       onClick={() => {
+  //         setCount((v) => {
+  //           return v + 1
+  //         })
+  //       }}
+  //     >
+  //       增加 count
+  //     </button>
+  //     <button
+  //       onClick={() => {
+  //         document.body.dispatchEvent(new Event('xxxx'))
+  //       }}
+  //       // @ts-ignore
+  //     >
+  //       触发 xxx 事件
+  //     </button>
+  //   </>
+  // )
 
   return (
     <>
